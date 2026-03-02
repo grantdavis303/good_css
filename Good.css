@@ -1,7 +1,7 @@
 /*
     Good CSS
     Made by Grant Davis
-    Last updated: 2/11/2026
+    Last updated: 3/1/2026
 */
 
 
@@ -212,13 +212,15 @@ p.notification-text {
   margin: 0;
 }
 
-p.small, a.small {
+p.small, p.mini {
   color: var(--text-muted);
+}
+
+p.small {
   font-size: 0.85rem;
 }
 
-p.mini, a.mini {
-  color: var(--text-muted);
+p.mini {
   font-size: 0.75rem;
 }
 
@@ -273,6 +275,14 @@ code {
 a {
   color: var(--primary);
   text-decoration: none;
+}
+
+a.small {
+  font-size: 0.85rem;
+}
+
+a.mini {
+  font-size: 0.75rem;
 }
 
 a:hover {
@@ -331,6 +341,10 @@ button:hover {
 
 button:active {
   background-color: var(--active);
+}
+
+button:focus, button:focus-visible {
+  outline: 2px auto var(--secondary);
 }
 
 /* Design Elements */
@@ -405,7 +419,7 @@ tfoot td {
   text-align: center;
 }
 
-/* Forms */
+/* Forms & Inputs */
 
 form {
   background-color: var(--surface);
@@ -440,7 +454,7 @@ input, textarea {
   border-radius: var(--radius-vsm);
   color: var(--text);
   font-family: Inter, sans-serif;
-  padding: 0.25rem;
+  padding: 1rem;
 }
 
 textarea {
@@ -448,11 +462,23 @@ textarea {
   height: 10rem;
 }
 
+input[type="checkbox"],
+input[type="radio"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
 input[type="checkbox"], input[type="radio"] {
   width: 1rem;
   height: 1rem;
   accent-color: var(--primary);
-  cursor: pointer;
+}
+
+input:hover, textarea:hover {
+  border: 1px solid var(--primary);
+  transition: 0.5s;
 }
 
 /* Scrollbar */
