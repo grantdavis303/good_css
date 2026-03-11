@@ -52,6 +52,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+div#main {
+  width: 1000px;
+  margin: 0 auto;
+}
+
 /* Containers */
 
 div {
@@ -61,17 +66,17 @@ div {
 
 /* Flex */
 
-.flexRowContainer {
+div.flexRowContainer {
   display: flex;
   flex-direction: row;
 }
 
-.flexColumnContainer {
+div.flexColumnContainer {
   display: flex;
   flex-direction: column;
 }
 
-.flexChild {
+div.flexChild {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -81,7 +86,7 @@ div {
 
 /* Grid */
 
-.gridContainer {
+div.gridContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
@@ -89,7 +94,7 @@ div {
   box-sizing: border-box;
 }
 
-.gridChild {
+div.gridChild {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -126,7 +131,7 @@ div.error {
   border-radius: var(--radius-sm);
 }
 
-/* Text */
+/* All Text */
 
 h1, h2, h3, h4, h5, h6, p, li, dt, dd, label, pre, code {
   color: var(--text);
@@ -351,10 +356,9 @@ button:focus, button:focus-visible {
 
 hr {
   background-color: var(--border);
-  height: 1px;
+  height: 2px;
   border: none;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 /* Media */
@@ -378,6 +382,13 @@ img.icon, svg.icon {
 }
 
 /* Tables */
+
+div.tableContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: auto;
+}
 
 table {
   background-color: var(--surface);
@@ -425,8 +436,9 @@ form {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  margin: 0rem;
+  margin: 0rem auto; /* centered */
   padding: 1rem;
+  max-width: 600px;
 }
 
 form > :first-child {
@@ -437,6 +449,10 @@ form > div {
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
+}
+
+form div input[type="text"] {
+  width: 100%;
 }
 
 label {
@@ -524,7 +540,7 @@ input:hover, textarea:hover {
     background-color: rgb(255, 255, 255);
   } */
 
-  .gridContainer {
+  div.gridContainer {
     grid-template-columns: 1fr;
   }
 }
@@ -534,8 +550,15 @@ input:hover, textarea:hover {
     background-color: rgb(255, 255, 255);
   } */
 
-  .gridContainer {
+  div.gridContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 900px) {
+  div#main {
+    width: auto;
+    margin: 0;
   }
 }
 
